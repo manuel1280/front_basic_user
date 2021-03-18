@@ -1,6 +1,6 @@
 ===== FRONT FOR BASI USER API =====
 
-Basic and usefull front application on HMTL5, Javascript ES6 and Bulma styles
+Basic and usefull front application on HMTL5, Javascript ES6 and using Bulma styles
 
 https://api-client-form.herokuapp.com/
 
