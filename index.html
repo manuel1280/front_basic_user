@@ -29,47 +29,49 @@
                     <div class="column is-6-desktop">
 
                       <!--begin Form------------------------------------------------------------------->
-                      <div class="field">
-                        <label class="label">Full Name</label>
-                        <div class="control">
-                          <input class="input" type="text" placeholder="Full name">
-                        </div>
-                      </div>
-
-                      <div class="field">
-                        <label class="label">Image Url</label>
-                        <div class="control">
-                          <input class="input" type="text" placeholder="https://my-image-url.com">
-                        </div>
-                      </div>
-
-                      <div class="field">
-                        <label class="label">Gender</label>
-                        <div class="control">
-                          <div class="select">
-                            <select>
-                              <option>Select dropdown</option>
-                              <option>With options</option>
-                            </select>
+                        <form accept-charset="UTF-8" action="http://localhost:3001/api/v1/users" method="POST" id="user_form">
+                          <div class="field">
+                            <label class="label">Full Name</label>
+                            <div class="control">
+                              <input class="input" name="user[full_name]" type="text" placeholder="Full name">
+                            </div>
                           </div>
-                        </div>
-                      </div>
 
-                      <div class="field">
-                        <label class="label">Birthday</label>
-                        <div class="control">
-                          <input type="date" data-start-date="10/24/2019">
-                        </div>
-                      </div>
+                          <div class="field">
+                            <label class="label">Image Url</label>
+                            <div class="control">
+                              <input class="input" name="user[image_url]" type="text" placeholder="https://my-image-url.com">
+                            </div>
+                          </div>
 
-                      <div class="field is-grouped">
-                        <div class="control">
-                          <button class="button is-link">Submit</button>
-                        </div>
-                        <div class="control">
-                          <button class="button is-link is-light">Cancel</button>
-                        </div>
-                      </div>
+                          <div class="field">
+                            <label class="label">Gender</label>
+                            <div class="control">
+                              <div class="select">
+                                <select name="user[gender]">
+                                  <option value="0">Male</option>
+                                  <option value="1">Female</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="field">
+                            <label class="label">Birthday</label>
+                            <div class="control">
+                              <input type="date" name="user[birthday]" data-start-date="10/24/2019">
+                            </div>
+                          </div>
+
+                          <div class="field is-grouped">
+                            <div class="control">
+                              <button class="button is-link" type="submit" onclick="window.sendUser(event)">Submit</button>
+                            </div>
+                            <div class="control">
+                              <button class="button is-link is-light">Cancel</button>
+                            </div>
+                          </div>
+                        </form>
                       <!--end Form------------------------------------------------------------------->
                       <section class="section">
                         <div class="container" style="border: 2px solid black" id="list-users">
