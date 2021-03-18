@@ -1,7 +1,7 @@
 window.sendUser = function(event) {
     event.preventDefault();
     var xhttp = new this.XMLHttpRequest();
-    xhttp.open("POST","http://localhost:3001/api/v1/users" );
+    xhttp.open("POST","https://fast-harbor-93488.herokuapp.com/api/v1/users" );
     xhttp.onload = function (event) {
         let notify = document.getElementById("notification");
         notify.style.display = "block";

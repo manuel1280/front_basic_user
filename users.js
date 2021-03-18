@@ -18,7 +18,7 @@ function getUsers() {
 
         }
     };
-    xhttp.open("GET","http://localhost:3001/api/v1/users", true);
+    xhttp.open("GET","https://fast-harbor-93488.herokuapp.com/api/v1/users", true);
     xhttp.send();
 }
 getUsers();
