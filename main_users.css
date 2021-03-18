@@ -1,0 +1,9 @@
+.table a {
+    color: cadetblue !important;
+}
+.table a:hover{
+    color: #0a0a0a !important;
+}
+.media-content {
+    color: #0a0a0a !important;
+}
