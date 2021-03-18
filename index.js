@@ -1,15 +1,24 @@
 window.sendUser = function(event) {
     event.preventDefault();
     var xhttp = new this.XMLHttpRequest();
-    xhttp.open("POST","http://localhost:3001/api/v1/users", );
+    xhttp.open("POST","http://localhost:3001/api/v1/users" );
     xhttp.onload = function (event) {
-        let listUsers = document.getElementById("list-users");
-        let response = JSON.parse(this.responseText);
+        let notify = document.getElementById("notification");
+        notify.style.display = "block";
 
-        listUsers.insertAdjacentHTML("afterbegin",
-            response.id + " - " + response.full_name + "<br />")
+        if (xhttp.status == 200 || xhttp.status == 201) {
+            let response = JSON.parse(this.responseText);
+            notify.classList.remove("is-danger");
+            notify.classList.add("is-info");
+            notify.innerText = "! User Created !"
+        }else{
+            notify.classList.remove("is-info");
+            notify.classList.add("is-danger");
+            notify.innerText = xhttp.response
+        }
+
     };
     var userForm = new this.FormData(document.getElementById("user_form"))
     xhttp.send(userForm)
-    alert("!user created!");
+
 };
