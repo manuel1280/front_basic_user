@@ -68,7 +68,7 @@
 
                           <div class="field is-grouped">
                             <div class="control">
-                              <button class="button is-link" type="submit" onclick="window.sendUser(event)">Submit</button>
+                              <button class="button is-link" type="submit" id="submit_button" onclick="window.sendUser(event)">Submit</button>
                             </div>
                           </div>
                         </form>
@@ -116,5 +116,16 @@
     </footer>
     <script type="text/javascript" src="bulma/lib/main.js"></script>
     <script type="text/javascript" src="index.js"></script>
+    <script>
+      var userAttributes = document.getElementById("user_form");
+      var submit = document.getElementById("submit_button");
+      submit.addEventListener("click", function () {
+        for (var i = 0; i < userAttributes.elements.length; i++) {
+          if (userAttributes[i].name != "user[gender]") {
+            userAttributes[i].value = "";
+          }
+        }
+      });
+    </script>
   </body>
 </html>
